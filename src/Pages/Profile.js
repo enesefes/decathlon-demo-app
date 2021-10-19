@@ -79,7 +79,8 @@ function Profile() {
             >
               <span className=" font-bold">Address: </span>
               <p class="underline">
-                {geo.address_line1}, {geo.address_line2}, {geo.city}/{geo.country}
+                {geo.address_line1}, {geo.address_line2}, {geo.city}/
+                {geo.country}
               </p>
             </a>
           </div>

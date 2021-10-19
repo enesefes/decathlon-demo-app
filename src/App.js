@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-
 import Header from "./components/Header";
 import {
   BrowserRouter as Router,
@@ -19,12 +18,6 @@ import Postlistnew from "./components/Postlistnew";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-
-
-const UserPage = () => {
-  return <h3>User Page</h3>;
-};
-
 function App() {
   return (
     <BrowserRouter>
@@ -33,13 +26,14 @@ function App() {
           <Header />
         </div>
         <ScrollToTop />
+
         <Switch>
           <Route path="/" exact component={Postlistnew} />
           <Route path="/users" component={UserList} />
           <Route path="/profile/:id" component={Profile} />
           <Route component={Notfound} />
         </Switch>
-        <Footer/>
+        <Footer />
       </Router>
     </BrowserRouter>
   );

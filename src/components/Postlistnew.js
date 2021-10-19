@@ -4,11 +4,8 @@ import { useState, useEffect } from "react";
 import like from "../images/like.svg";
 import moment from "moment";
 
-
-
 function Postlistnew() {
   const [postdata, setpostdata] = useState([]);
-
 
   useEffect(() => {
     axios
@@ -19,7 +16,7 @@ function Postlistnew() {
       })
       .then((response) => {
         setpostdata(response.data.data);
-        console.log(response)
+        console.log(response);
         console.log(postdata);
       })
       .catch((error) => {
@@ -75,19 +72,23 @@ function Postlistnew() {
                         ></img>
                       </div>
                       <div className="grid content-center">
-                      <h3 className="px-4 text-base font-bold text-left">
-                        {post.owner.title}. {post.owner.firstName} {post.owner.lastName}
-                      </h3>
-                      <p className="px-4 text-sm text-gray-500">{post.owner.id}</p>
+                        <h3 className="px-4 text-base font-bold text-left">
+                          {post.owner.title}. {post.owner.firstName}{" "}
+                          {post.owner.lastName}
+                        </h3>
+                        <p className="px-4 text-sm text-gray-500">
+                          {post.owner.id}
+                        </p>
+                      </div>
                     </div>
-                    </div>
-
-                    
                   </div>
                 </Link>
                 <div class="card text-left shadow-sm bg-white">
                   <figure class=" rounded-tr-none	">
-                    <img src={post.image} className=" rounded-t-none h-96 object-cover "></img>
+                    <img
+                      src={post.image}
+                      className=" rounded-t-none h-96 object-cover "
+                    ></img>
                   </figure>
                   <div class="card-body px-4">
                     <p>{post.text}</p>
