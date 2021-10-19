@@ -77,7 +77,7 @@ function Usersnew() {
                     </h2>
                     <p className="truncate">{user.id}</p>
                     <div class="justify-center card-actions">
-                      <button class="btn btn-outline btn-accent">
+                      <button class="btn btn-outline btn-info">
                         More info
                       </button>
                     </div>

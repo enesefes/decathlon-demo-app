@@ -95,7 +95,7 @@ function Postlistnew() {
                   </div>
                   <div className="flex p-4">
                     {post.tags.map((tag) => (
-                      <div class="badge badge-primary mr-3 flex">{tag}</div>
+                      <div class="badge badge-info mr-3 flex">{tag}</div>
                     ))}
                   </div>
                   <div className="flex my-4 mx-4 items-center justify-between">
