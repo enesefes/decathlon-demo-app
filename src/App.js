@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+
+import Header from "./components/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter,
+  BrowserRouter,
+} from "react-router-dom";
+
+import UserList from "./components/Usersnew";
+import Notfound from "./Pages/Notfound";
+import Profile from "./Pages/Profile";
+import Postlistnew from "./components/Postlistnew";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
+
+
+const UserPage = () => {
+  return <h3>User Page</h3>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Router>
+        <div className="App">
+          <Header />
+        </div>
+        <ScrollToTop />
+        <Switch>
+          <Route path="/" exact component={Postlistnew} />
+          <Route path="/users" component={UserList} />
+          <Route path="/profile/:id" component={Profile} />
+          <Route component={Notfound} />
+        </Switch>
+        <Footer/>
+      </Router>
+    </BrowserRouter>
   );
 }
 
